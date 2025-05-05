@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head><meta property="og:title" content="Título do site">
+    <meta property="og:description" content="Descrição do site">
+    <meta property="og:image" content="URL-da-sua-imagem.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Mc Neguinho BDP</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+
+
+<audio id="player" autoplay></audio>
+
+<script>
+    // Lista de músicas
+    const playlist = [
+        "audio/12345.mp3",
+        "audio/m3.mp3"
+    ];
+
+    let currentIndex = 0; // Índice da música atual
+    const player = document.getElementById("player");
+
+    // Função para carregar e tocar a música
+    function playMusic() {
+        if (currentIndex < playlist.length) {
+            player.src = playlist[currentIndex];
+            player.play().catch(error => {
+                console.error("Erro ao reproduzir o áudio:", error);
+            });
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Reinicia a playlist (opcional)
+            playMusic(); // Toca novamente do início
+        }
+    }
+
+    // Evento para tocar a próxima música ao terminar a atual
+    player.addEventListener("ended", playMusic);
+
+    // Inicia a primeira música
+    playMusic();
+</script>
+
+
+<body>
+  <header class=" p-5">
+            
+        <nav class="container d-flex justify-content-between align-items-center" >
+            
+            <ul class="nav mt-5">
+                <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+            </ul>
+                <div id="acessibilidade">
+                    <button id="aumentar-fonte" class="btn btn-primary fw-bold">A+</button>
+                    <button id="diminuir-fonte" class="btn btn-primary fw-bold">A-</button>
+                </div>
+        </nav>
+</header>
+    <main class="container my-5">
+
+        <section id="inicio" class="my-5">
+            <div class="inicio-fundo d-flex justify-content-between align-items-center">
+               
+                <div class="esquerda-contedo">
+                   </div>
+                    <img src="img/derer.png" alt="" width="80%"  margin-left: 50px>
+        </section>
+        <h2 >Quem é Mc Neguinho BDP </h2>
+                    <p   class="p-2">MC Neguinho BDP, cujo nome verdadeiro é Neguinho do BDP, é um artista de funk carioca que ganhou notoriedade na cena musical brasileira, especialmente nas comunidades do Rio de Janeiro. Ele é conhecido por suas letras que refletem a realidade das favelas, abordando temas como a vida cotidiana, amor e as dificuldades enfrentadas pelos moradores dessas áreas.
+
+                        Inícios e Ascensão
+                        
+                        Neguinho BDP começou sua carreira no funk em meados dos anos 2000. Ele se destacou inicialmente em bailes funk e eventos locais, onde sua energia e carisma conquistaram o público. Com o tempo, ele foi ganhando seguidores e se tornou uma figura conhecida no cenário do funk.
+                        
+  Estilo Musical
+                        
+                        O estilo de MC Neguinho BDP é caracterizado por batidas envolventes e letras que falam sobre a vida nas favelas, relacionamentos e festas. Suas músicas muitas vezes têm uma pegada dançante que agrada ao público jovem, sendo tocadas em festas e eventos.
+                        
+                        Sucessos
+                        
+                        Ao longo da sua carreira, Neguinho BDP lançou várias músicas que se tornaram populares, conquistando fãs em todo o Brasil. Ele também colaborou com outros artistas do gênero, ampliando ainda mais seu alcance.
+                        
+                        Impacto Cultural
+                        
+                        Através de sua música, Neguinho BDP tem sido uma voz para os jovens das favelas, expressando suas lutas e aspirações. Ele representa a cultura do funk carioca, que é uma parte importante da identidade musical brasileira.
+                        
+                        Conclusão
+                      
+                        MC Neguinho BDP continua ativo na cena musical, lançando novas músicas e participando de eventos. Sua trajetória inspira muitos jovens artistas que buscam espaço na indústria da música.</p>
+        <section id="galeria">
+            <h2 class="text-center pt-5">Galeria</h2>
+            <div class="container p-3 mt-3 fundo-galeria ">
+
+                <div class="row justify-content-md-center">
+                    <div class="col-md-4">
+                        <img src="img/foto.png"
+                            class="img-fluid rounded-5" loading="lazy">
+                    </div>
+                    <div class="col-md-4">
+                        <div>
+                        <img src="img/images.jpg" 
+                        class="img-fluid rounded-5" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container p-5 d-flex justify-content-center">
+                <div class="col-md-8 col-lg-10 rounded-5 formulario"> <!-- Caixa do formulário com 60% de largura -->
+                    <h2 class="mb-3">Entre em contato</h2>
+                    <form>
+                        <div class="form-group mb-3">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" class="form-control rounded-3 mt-1"
+                                placeholder="">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control rounded-3 mt-1"
+                                placeholder="">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="mensagem">Duvidas</label>
+                            <textarea id="mensagem" name="mensagem" class="form-control rounded-4 mt-2" rows="4"
+                                placeholder=""></textarea>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg rounded-pill tamanho-botao">Enviar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="text-center p-3 fst-italic">
+        <p>Acesse nossas redes:</p>
+        <i class="bi bi-whatsapp"></i>
+        <i class="bi bi-instagram"></i>
+        <i class="bi bi-tiktok"></i>
+        <p class="mt-3">Desenvolvido por class="img-fluid rounded-5" loading="lazy">
+   
+</body>
+
+</html>
